@@ -1,0 +1,18 @@
+Code to generate the symbolic expression of a Matlab Neural Network object.
+
+This allows you to use a neural network model without relying on the neural network toolbox.
+
+Note I only implemented for feed forward nets (MLPs) and not all possible transfer functions are supported. However, it should be very straightforward to do this.
+
+Example:
+
+>> net = newff([-1 1; -1 1],[3 1]); 
+>> getNeuralNetExpression(net)
+
+ans =
+
+(2/(1+exp(-2*((2/(1+exp(-2*(x1*1.728941e+00 + x2*1.700224e+00 + -2.424871e+00)))-1)*-9.045580e-01 + (2/(1+exp(-2*(x1*-2.422662e+00 + x2*-1.034790e-01 + 000000)))-1)*-1.976229e-01 + (2/(1+exp(-2*(x1*2.044171e+00 + x2*1.304364e+00 + 2.424871e+00)))-1)*1.050105e+00 + 000000)))-1)
+
+>>
+
+Problems/Improvements: Dirk Gorissen <dgorissen@gmail.com>
